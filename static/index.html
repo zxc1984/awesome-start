@@ -18,6 +18,7 @@
           {url : 'code-comparison.appspot.com', urlName : 'remote backend' },       
           {url : 'localhost:8080', urlName : 'localhost' } ];
 
+        $scope.showdetails = false;
         $scope.apikey = "1234";
         
         //Replace this url with your final URL from the SingPath API path. 
@@ -155,10 +156,15 @@
           <pre>{{entity.data.message}}</pre>
       </li>
     </ul>
-    <hr>
+
     
     <!-- You can hide this setup code once you've configured your app -->
-    
+    <!-- This checkbox will hide everything in the DIV below or show it all. -->
+    <hr>      
+    <input type="checkbox" ng-model="showdetails"> Show Angularjs details.
+
+  
+  <div ng-show="showdetails">
     <h3>Angular is used to edit any items on a remote backend using a specific apikey.</h3>
     Current backend:<br>   
     <select ng-model="remote_url" ng-options="item.url as item.urlName for item in backend_locations"></select>
@@ -244,5 +250,6 @@
     <form ng-submit="update(item.id)">
       <input type="submit" value="update item {{item.id}} (with PUT)">
     </form>
+  </div>
   </body>
 </html>
