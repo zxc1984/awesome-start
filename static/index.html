@@ -1,11 +1,13 @@
 <!doctype html>
 <html ng-app="app">
-  <header>
+  <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
 
     <script language="javascript" type="text/javascript">
       angular.module('app', ['ngResource']);
+      
+      //This controller controls the application
       function BackendController($scope,$resource){
       
         $scope.gaEvent = function($event){
@@ -142,114 +144,173 @@
         $scope.list();         
       }
     </script>
-  </header>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .responsive-table {
+	      width: 100%;
+	      overflow:scroll;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    
+    
+  </head>
   <body ng-controller="BackendController" ng-click="gaEvent($event)">
-    
-    Example app: <hr>
-    Please leave a message:<br>
-    <input type="text" ng-model="item.data.message">
-
-      <input ng-click="add()" type="submit" name="add new item" value="Submit">
-
-    <ul>
-      <li ng-repeat="entity in items.entities">
-          <pre>{{entity.data.message}}</pre>
-      </li>
-    </ul>
-
-    
-    <!-- You can hide this setup code once you've configured your app -->
-    <!-- This checkbox will hide everything in the DIV below or show it all. -->
-    <hr>      
-    <input type="checkbox" ng-model="showdetails"> Show Angularjs details.
-
+  	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="index.html">BaaS</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="index.html">Overview</a></li>
+              <!-- <li><a href="#about">Documentation</a></li> -->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
   
-  <div ng-show="showdetails">
-    <h3>Angular is used to edit any items on a remote backend using a specific apikey.</h3>
-    Current backend:<br>   
-    <select ng-model="remote_url" ng-options="item.url as item.urlName for item in backend_locations"></select>
-    Base URL: {{remote_url}} <br>
-    <hr>
-      You can change this apikey to be any string so that you won't conflict with others.<br>
-      <form ng-submit="get_metadata()">
-        Current API Key: <input type="text" ng-model="apikey"><br>
-        <input type="submit" name="get metadata" value="get metadata">
-        (See what is currently stored for the apikey.)
-      </form>
-      Metadata: <pre>{{metadata}}</pre>
-    <hr>
-    Update the list of models for the apikey.<br>
-    <form ng-submit="list()">  
-      Model: <input type="text" ng-model="model" placeholder="user">
-      <input type="submit" name="list" value="list">
-    </form>  
-    
-    <hr>
-    <!-- Here is a good place to comment out everythign above once you are configured. -->
-    
-    <hr>
-    
-    There are {{items.entities.length}} items for {{model}}. Status: {{waiting}}
-    <table>
-      <th ng-repeat="(key,val) in items.entities[0]">
-          {{key}}
-      <th>
-      <th>Delete</th>
-    
-      <tr ng-repeat="item in items.entities">
-    
-        <td ng-repeat="(key,val) in item">
-          {{val}}
-        </td>
-        <td>
-          <form ng-submit="load(item['id'])">
-            <input type="submit" name="load" value="load">
-          </form>
-        </td>
-        <td>
-          <form ng-submit="delete(item['id'])">
-            <input type="submit" name="delete" value="delete">
-          </form>
-        </td>
-      </tr>
-    </table>
-      
- <hr>
-    Item Data:
-      <table>
-          <tr>
-            <td>ID:</td>
-            <td><input type="text" ng-model="item.id"></td>
-          </tr>
-          <tr>
-            <td>message:</td>
-            <td><input type="text" ng-model="item.data.message"></td>
-          </tr>
-        <!-- You could dynamically show all key-value pairs in the item.data
-        <tr ng-repeat="(key,val) in item.data">
-          <td>{{key}}:</td> 
-          <td><input type="text" ng-model="item.data[key]"></td>
-        </tr>
-
-        <tr>
-          <td><input type="text" ng-model="newItemKey" placeholder="add key here"></td>
-          <td><input type="text" ng-model="newItemValue" placeholder="add value here"></td>
-          <td>
-            <form ng-submit="add_key_to_item()">
-              <input type="submit" value="Add key/value pair."> 
-            </form>
-          </td>
-        </tr>
-        -->
-
-      </table>
-
-    <form ng-submit="add()">
-      <input type="submit" name="add new item" value="add new item (with POST)">
-    </form>
-    <form ng-submit="update(item.id)">
-      <input type="submit" value="update item {{item.id}} (with PUT)">
-    </form>
-  </div>
+    <div class="container-fluid">
+    	<div class="row">
+	    	<div class="span8 hidden-phone">
+	    		<div class="hero-unit">
+			        <h1>Backend as a Service</h1>
+			        <p>Here is a project that you can fork on Github to start prototyping your own responsive design in a public gh-pages branch or any other publicly hosted folder like your Dropbox public folder. You can start by using the provided backend-as-a-service, and then later deploy your project to Google App Engine and use your own instance of the backend-as-a-service running in the free tier of Google App Engine.</p>
+			        <p><a class="btn btn-primary btn-large" href="https://github.com/ChrisBoesch/awesome-start">Fork on GitHub &raquo;</a></p>
+			    </div>
+	    	</div>
+	    	<div class="visible-phone">
+	    		<h3 style="margin-top:0">Backend as a Service</h3>
+		    	<p>Here is a project that you can fork on Github to start prototyping your own responsive design in a public gh-pages branch or any other publicly hosted folder like your Dropbox public folder. You can start by using the provided backend-as-a-service, and then later deploy your project to Google App Engine and use your own instance of the backend-as-a-service running in the free tier of Google App Engine.</p>
+				<p><a class="btn btn-primary" href="https://github.com/ChrisBoesch/awesome-start">Fork on GitHub &raquo;</a></p>
+				<hr/>
+	    	</div>
+	    	<div class="span4">
+			    <h3>Example App</h2>
+			    <div class="input-append">
+			    	<legend>Please leave a message:</legend>
+			    	<input type="text" ng-model="item.data.message">
+			    	<input class="btn" ng-click="add()" type="submit" name="add new item" value="Submit">
+			    </div>
+			    <ul>
+			      <li ng-repeat="entity in items.entities">
+			          {{entity.data.message}}
+			      </li>
+			    </ul>
+			    
+			    <!-- You can hide this setup code once you've configured your app -->
+			    <!-- This checkbox will hide everything in the DIV below or show it all. -->
+			    <hr>      
+			    <label class="checkbox"><input type="checkbox" ng-model="showdetails">Show Angularjs details.</label>
+			</div>
+		</div>
+	
+		<div ng-show="showdetails" class="container">
+			<h3>AngularJS Details</h3>
+			<p class="lead">Angular is used to edit any items on a remote backend using a specific apikey.</p><hr/>
+			<label>Current backend:</label><br>   
+			<select ng-model="remote_url" ng-options="item.url as item.urlName for item in backend_locations"></select>
+			<br>Base URL: {{remote_url}} <br>
+			<hr>
+			You can change this apikey to be any string so that you won't conflict with others.<br>
+			<form ng-submit="get_metadata()">
+				<div class="input-append">
+				Current API Key: <input type="text" ng-model="apikey">
+				<input type="submit" class="btn" name="get metadata" value="Get metadata">
+				</div>
+				(See what is currently stored for the apikey.)
+			</form>
+			Metadata: <pre>{{metadata}}</pre>
+			<hr>
+	   		Update the list of models for the apikey.<br>
+		    <form ng-submit="list()">  
+		      <div class="input-prepend input-append">
+			      <span class="add-on">Model: </span><input type="text" ng-model="model" placeholder="user">
+			      <input type="submit" class="btn" name="list" value="List">
+		      </div>		    
+			</form>  
+		    
+		    <hr>
+		    <!-- Here is a good place to comment out everythign above once you are configured. -->
+	    
+	    	There are {{items.entities.length}} items for {{model}}. Status: {{waiting}}
+			<div class="responsive-table">
+			<table class="table">
+			  <th ng-repeat="(key,val) in items.entities[0]">
+			      {{key}}
+			  <th>
+			  <th>Delete</th>
+			
+			  <tr ng-repeat="item in items.entities">
+			
+			    <td ng-repeat="(key,val) in item">
+			      {{val}}
+			    </td>
+			    <td>
+			      <form ng-submit="load(item['id'])" style="margin-bottom:0">
+			        <input type="submit" class="btn" name="load" value="Load">
+			      </form>
+			    </td>
+			    <td>
+			      <form ng-submit="delete(item['id'])" style="margin-bottom:0">
+			        <input type="submit" class="btn" name="delete" value="Delete">
+			      </form>
+			    </td>
+			  </tr>
+			</table></div>
+	      
+	    	<hr>
+	    	Item Data:
+			<table>
+			  <tr>
+			    <td>ID:</td>
+			    <td><input type="text" ng-model="item.id"></td>
+			  </tr>
+			  <tr>
+			    <td>Data:</td>
+			    <td><input type="text" ng-model="item.data.message"></td>
+			  </tr>
+			<!-- You could dynamically show all key-value pairs in the item.data
+			<tr ng-repeat="(key,val) in item.data">
+			  <td>{{key}}:</td> 
+			  <td><input type="text" ng-model="item.data[key]"></td>
+			</tr>
+			
+			<tr>
+			  <td><input type="text" ng-model="newItemKey" placeholder="add key here"></td>
+			  <td><input type="text" ng-model="newItemValue" placeholder="add value here"></td>
+			  <td>
+			    <form ng-submit="add_key_to_item()">
+			      <input type="submit" class="btn" value="Add key/value pair."> 
+			    </form>
+			  </td>
+			</tr>
+			-->
+			
+			</table>
+	
+		    <form ng-submit="add()">
+		      <input type="submit" class="span4 btn" name="add new item" value="Add new item (Using POST)">
+		    </form>
+		    <form ng-submit="update(item.id)">
+		      <input type="submit" class="span4 btn" value="Update item {{item.id}} (Using PUT)">
+		    </form>
+	    </div>
+	 </div>
+	 <!-- Bootstrap Javascript Files-->
+	 <script src="http://code.jquery.com/jquery-latest.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <!-- Bootstrap Javascript Files End-->
   </body>
 </html>
