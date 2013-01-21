@@ -50,15 +50,21 @@ class Backend(db.Model):
     return result
   
   @staticmethod
-  def get_entities(apikey, model):
+  def get_entities(apikey, model=None, offset=0, limit=50):
     #update ModelCount when adding
-    objects = Backend.all().filter('apikey',apikey).filter('model', model).fetch(50)
-    
+    theQuery = Backend.all().filter('apikey',apikey)
+    if model:
+      theQuery = theQuery.filter('model', model)
+
+    objects = theQuery.fetch(limit=limit, offset=offset)
+
     entities = []
     for object in objects:
-      entity = {'model':model,
+      entity = {'model':object.model,
               'apikey': apikey,
-              'id': object.key().id(), 
+              'id': object.key().id(),
+              'created': object.created,
+              'modified': object.modified, 
               'data': json.loads(object.jsonString)}
       entities.append(entity)
     
@@ -70,6 +76,8 @@ class Backend(db.Model):
               'apikey': apikey,
               'model': model,
               'count': count,
+              'offset': offset,
+              'limit':limit,
               'entities': entities}      
     return result
     
@@ -180,17 +188,13 @@ class ActionHandler(webapp.RequestHandler):
         self.response.headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Requested-With'
         self.response.headers['Access-Control-Allow-Credentials'] = 'True'
 
-
-        #self.response.headers['Content-Type'] = 'application/json'
-        #self.response.headers['Access-Control-Allow-Origin'] = "*"
-        #self.response.headers['Access-Control-Allow-Methods'] = "GET, POST, OPTIONS"
-        #self.response.headers['Access-Control-Allow-Credentials'] = "true"
-
+        #Add a handler to automatically convert datetimes to ISO 8601 strings. 
+        dthandler = lambda obj: obj.isoformat() if isinstance(obj, datetime.datetime) else None
         if callback:
-        	content = str(callback) + '(' + json.dumps(result) + ')'
+        	content = str(callback) + '(' + json.dumps(result,default=dthandler) + ')'
         	return self.response.out.write(content)
     		
-        return self.response.out.write(json.dumps(result)) 
+        return self.response.out.write(json.dumps(result,default=dthandler)) 
 
     def metadata(self,apikey):
       	#Fetch all ModelCount records for apikey to produce metadata on currently supported models. 
@@ -206,6 +210,28 @@ class ActionHandler(webapp.RequestHandler):
                   } 
       	
         return self.respond(result)
+
+    #Dump apikey table
+    def backup(self,apikey):
+        #Fetch all ModelCount records for apikey to produce metadata on currently supported models. 
+        dthandler = lambda obj: obj.isoformat() if isinstance(obj, datetime.datetime) else None
+        
+        offset = 0
+        new_offset = self.request.get("offset")
+        if new_offset:
+            offset = int(new_offset)
+
+        result = Backend.get_entities(apikey,offset=offset)
+        
+        filename = "Backup_"+apikey+"_offset_"+str(offset)+".json"
+        self.response.headers['Content-Type'] = 'application/streaming-json'
+        self.response.content_disposition = 'attachment; filename="'+filename+'"'
+        
+        for obj in result['entities']:
+          self.response.out.write(json.dumps(obj,default=dthandler)+"\n")
+        return
+
+        #return self.respond(result)
       
     def clear_apikey(self,apikey):
         """Clears the datastore for a an apikey. 
@@ -239,7 +265,12 @@ class ActionHandler(webapp.RequestHandler):
             logging.info("Adding new data: "+data)
             result = Backend.add(apikey, model, data)
           else:
-            result = Backend.get_entities(apikey, model)
+            offset = 0
+            new_offset = self.request.get("offset")
+            if new_offset:
+              offset = int(new_offset)
+
+            result = Backend.get_entities(apikey, model,offset=offset)
           
       	  return self.respond(result)
 
@@ -280,6 +311,7 @@ class ActionHandler(webapp.RequestHandler):
 
 application = webapp.WSGIApplication([
     webapp.Route('/<apikey>/metadata', handler=ActionHandler, handler_method='metadata'), 
+    webapp.Route('/<apikey>/backup', handler=ActionHandler, handler_method='backup'),     
     webapp.Route('/<apikey>/clear', handler=ActionHandler, handler_method='clear_apikey'),
     webapp.Route('/<apikey>/<model>/clear', handler=ActionHandler, handler_method='clear_model'), 
     webapp.Route('/<apikey>/<model>/<model_id>/delete', handler=ActionHandler, handler_method='delete_model'), 
