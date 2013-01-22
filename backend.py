@@ -25,6 +25,12 @@ class Backend(db.Model):
   created = db.DateTimeProperty(auto_now_add=True) #The time that the model was created    
   modified = db.DateTimeProperty(auto_now=True)
   
+  def to_dict(self):
+       d = dict([(p, unicode(getattr(self, p))) for p in self.properties()])
+       d["id"] = self.key().id()
+       return d
+
+      
   @staticmethod
   def add(apikey, model, data):
     #update ModelCount when adding
@@ -231,8 +237,27 @@ class ActionHandler(webapp.RequestHandler):
           self.response.out.write(json.dumps(obj,default=dthandler)+"\n")
         return
 
+    #Delete this experimental backup method
+    def backup_test(self,apikey):
+        #Fetch all ModelCount records for apikey to produce metadata on currently supported models. 
+        dthandler = lambda obj: obj.isoformat() if isinstance(obj, datetime.datetime) else None
+        
+        offset = 0
+        new_offset = self.request.get("offset")
+        if new_offset:
+            offset = int(new_offset)
+
+        filename = "Backup_test_"+apikey+"_offset_"+str(offset)+".json"
+        self.response.headers['Content-Type'] = 'application/streaming-json'
+        self.response.content_disposition = 'attachment; filename="'+filename+'"'
+        
+        for entity in Backend.all():
+          self.response.out.write(json.dumps(entity.to_dict(),default=dthandler)+"\n")
+        return
+
         #return self.respond(result)
-      
+
+
     def clear_apikey(self,apikey):
         """Clears the datastore for a an apikey. 
 				"""
@@ -311,6 +336,7 @@ class ActionHandler(webapp.RequestHandler):
 
 application = webapp.WSGIApplication([
     webapp.Route('/<apikey>/metadata', handler=ActionHandler, handler_method='metadata'), 
+    webapp.Route('/<apikey>/backup_test', handler=ActionHandler, handler_method='backup_test'),     
     webapp.Route('/<apikey>/backup', handler=ActionHandler, handler_method='backup'),     
     webapp.Route('/<apikey>/clear', handler=ActionHandler, handler_method='clear_apikey'),
     webapp.Route('/<apikey>/<model>/clear', handler=ActionHandler, handler_method='clear_model'), 

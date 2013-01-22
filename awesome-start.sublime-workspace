@@ -1,0 +1,462 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Ga",
+				"GameResult"
+			],
+			[
+				"analyt",
+				"analyticsModels"
+			],
+			[
+				"cu",
+				"cumulative_return_percentage"
+			],
+			[
+				"cum",
+				"cumulative_returns"
+			],
+			[
+				"a",
+				"all"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "backend.py",
+			"settings":
+			{
+				"buffer_size": 12725,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/scboesch/github/awesome-start/awesome-start.sublime-project",
+		"/Users/scboesch/github/galaxy/index.html",
+		"/Users/scboesch/Downloads/working/app.yaml",
+		"/Users/scboesch/Downloads/working/main.py",
+		"/Users/scboesch/working/gae_bingo/main.py",
+		"/Users/scboesch/github/singpath-responsive-gui/app/js/dnd-app.js",
+		"/Users/scboesch/github/singpath-responsive-gui/app/dnd2.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/dnd.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/drag-n-drop_files/ctrl-dnd.js",
+		"/Users/scboesch/github/singpath-responsive-gui/app/drag-n-drop_files/app.js",
+		"/Users/scboesch/github/singpath-responsive-gui/app/drag-n-drop_files/example/dnd2.html",
+		"/Users/scboesch/Dropbox/Public/video-popups.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/partials/practice.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/js/app.js",
+		"/Users/scboesch/github/singpath-responsive-gui/app/admin.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/js/analytics.js",
+		"/Users/scboesch/github/singpath-responsive-gui/app/js/controllers.js",
+		"/Users/scboesch/github/singpath-responsive-gui/app/layout.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/drag-n-drop.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/drag-n-drop-example.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/partials/quests.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/partials/teach.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/partials/create.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/partials/landing.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/app.js",
+		"/Users/scboesch/github/singpath-responsive-gui/app/index.html",
+		"/Users/scboesch/github/singpath-responsive-gui/app/test_data/mobile_python_game.json",
+		"/Users/scboesch/github/singpath-responsive-gui/test/e2e/scenarios.js",
+		"/Users/scboesch/github/singpath-responsive-gui/app/test_data/python_game.json",
+		"/Users/scboesch/github/singpath-responsive-gui/app/analytics.js",
+		"/Users/scboesch/backup-with-model-stuff-app.js",
+		"/Users/scboesch/backup-for-generic-controllers.js",
+		"/Users/scboesch/github/singpath-responsive-gui/index.html",
+		"/Users/scboesch/github/angular-test/app/carosel.html",
+		"/Users/scboesch/github/angular-test/app/index.html",
+		"/Users/scboesch/github/angular-test/scripts/test.sh",
+		"/Users/scboesch/github/angular-test/app/app.test.html",
+		"/Users/scboesch/github/angular-test/test/e2e/mocks.js",
+		"/Users/scboesch/github/angular-test/test/e2e/app-test.html",
+		"/Users/scboesch/github/angular-test/test/e2e/scenarios2.js",
+		"/Users/scboesch/instructor_ver/UAT-2012-V12.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-V11.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-V12b.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-V11b.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-V10.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-V9-original.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-V5.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-V4.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-V3.py",
+		"/Users/scboesch/instructor_ver/FaciApiUAT_Private.py",
+		"/Users/scboesch/instructor_ver/UAT-2012.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-all-manual-uat.py",
+		"/Users/scboesch/Documents/UAT-2012.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-pre-user-update.py",
+		"/Users/scboesch/instructor_ver/UAT-2012-new-data.py",
+		"/Users/scboesch/instructor_ver/FaciApiUAT.py",
+		"/Users/scboesch/instructor_ver/refactored-and-passing-UAT-2012.py",
+		"/Users/scboesch/instructor_ver/backup-v2-UAT-2012.py",
+		"/Users/scboesch/Singpath/static/temp/singpath_mobile2.html",
+		"/Users/scboesch/Desktop/backup-UAT-2012.py",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_JsonCache.py",
+		"/Users/scboesch/Singpath/singpath_util/eventbus.py",
+		"/Users/scboesch/Singpath/singpath/urls.py",
+		"/Users/scboesch/Singpath/singpath/views.py",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_Badges.py",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_Singpath_Admin_Views.py",
+		"/Users/scboesch/Singpath/singpath/analytics.py",
+		"/Users/scboesch/Singpath/livejsonapi/models.py",
+		"/Users/scboesch/Singpath/singpath/mobileModels.py",
+		"/Users/scboesch/Singpath/livejsonapi/urls.py",
+		"/Users/scboesch/Singpath/livejsonapi/mobileViews.py",
+		"/Users/scboesch/Singpath/livejsonapi/views/path.py",
+		"/Users/scboesch/Singpath/singpath/models.py",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_Mobile_Models.py",
+		"/Users/scboesch/Singpath/livejsonapi/views/problem.py",
+		"/Users/scboesch/Singpath/api.py",
+		"/Users/scboesch/Singpath/index.yaml",
+		"/Users/scboesch/Singpath/cron.yaml",
+		"/Users/scboesch/Singpath/app.yaml",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_Analytics_Models.py",
+		"/Users/scboesch/Singpath/singpath/analyticsModels.py",
+		"/Users/scboesch/Singpath/livejsonapi/views/tournament.py",
+		"/Users/scboesch/Singpath/fyp/singpath_chart_examples.html",
+		"/Users/scboesch/Singpath/main.py",
+		"/Users/scboesch/Singpath/fyp/create_tournament.html",
+		"/Users/scboesch/Singpath/ender/badgesPopUp.html",
+		"/Users/scboesch/Singpath/ender/js/controllers.js",
+		"/Users/scboesch/Singpath/gae_bingo/static/js/gae_bingo.js",
+		"/Users/scboesch/Singpath/kit/test/e2e/basic_scenarios.js",
+		"/Users/scboesch/Singpath/kit/test/e2e/runner.html",
+		"/Users/scboesch/Singpath/alex/analytics/cohort.html",
+		"/Users/scboesch/Singpath/ender/news.html",
+		"/Users/scboesch/github/python-gae-verifier/main.py",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_Backup.py",
+		"/Users/scboesch/Singpath/singpath/backup.py",
+		"/Users/scboesch/Singpath/fyp/singpath_chart_examples2.html",
+		"/Users/scboesch/Singpath/livejsonapi/views.py",
+		"/Users/scboesch/Singpath/console/app/model/session.py",
+		"/Users/scboesch/Singpath/console/app/console.py",
+		"/Users/scboesch/github/python-gae-verifier/app.yaml",
+		"/Users/scboesch/Singpath/ender/test/e2e/page_load_scenarios.js",
+		"/Users/scboesch/Singpath/ender/contactUs.html",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_JsonAPI_Extra.py",
+		"/Users/scboesch/Singpath/ender/aboutUs.html",
+		"/Users/scboesch/Singpath/ender/index.html",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_Main_URLs.py",
+		"/Users/scboesch/Singpath/ender/test/e2e/ivan_static_scenarios.js",
+		"/Users/scboesch/Singpath/ender/howToUse.html",
+		"/Users/scboesch/Singpath/ender/contribution.html",
+		"/Users/scboesch/Singpath/singpath/restful.py",
+		"/Users/scboesch/Singpath/demo/templates/index2.html",
+		"/Users/scboesch/Singpath/demo/main.py",
+		"/Users/scboesch/Singpath/alex/_js/jsonrender/challengeView.js",
+		"/Users/scboesch/Backup/Player_new_backup.csv",
+		"/Users/scboesch/Singpath/kit/test/e2e/page_load_scenarios.js",
+		"/Users/scboesch/Singpath/mapreduce.yaml",
+		"/Users/scboesch/Singpath/settings.py",
+		"/Users/scboesch/Singpath/alex/_css/challengeView.css",
+		"/Users/scboesch/Singpath/alex/analytics/create_badge_mockup.html",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_JsonAPI.py",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_Path.py",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_Models.py",
+		"/Users/scboesch/Singpath/alex/_js/jsonrender/common.js",
+		"/Users/scboesch/Singpath/eli/challengeView.html",
+		"/Users/scboesch/github/views.py",
+		"/Users/scboesch/Singpath/kit/test/e2e/fyp_runner.html",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_RestApi.py",
+		"/Users/scboesch/Singpath/gaeunit/test/Test_restful.py"
+	],
+	"find":
+	{
+		"height": 65.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"get",
+			"get_entities",
+			"nickname",
+			"nicknme",
+			"nickname",
+			"module",
+			"resource",
+			"filters",
+			"app",
+			"dnd",
+			"drag-n-drop",
+			"example",
+			"drag-n-drop",
+			"bootstrap",
+			"onhold",
+			"dnd",
+			"ga",
+			"dnd",
+			"app.js",
+			"/css/bootstrap.css",
+			"/assets/img",
+			"logo.jpeg",
+			"no lo",
+			"Admin",
+			"ng-controller",
+			"game",
+			"name",
+			"another",
+			"player",
+			"Chris",
+			"angular",
+			"analytics",
+			"json",
+			"player",
+			"angular",
+			"Generic",
+			"nickname",
+			"{{",
+			"Interfaces",
+			"controller",
+			"player",
+			"add",
+			"test",
+			"phone",
+			"add",
+			"contact",
+			"push",
+			"name",
+			"player",
+			"SingPath",
+			"playerController",
+			"name",
+			"Home",
+			"contact",
+			"view details",
+			"view de",
+			"view",
+			"learn",
+			"caro",
+			"example",
+			"Project",
+			"todos",
+			"jump",
+			"jump{\"date\":\"26/08/2013 0000\"}",
+			"\",",
+			"2012",
+			"   ",
+			"    ",
+			"   ",
+			"booking confer",
+			"roy",
+			"CCA",
+			"fel",
+			"lily",
+			"user",
+			"add",
+			"add?",
+			"add",
+			"slots",
+			"recurrence",
+			"%20",
+			"%22",
+			"0",
+			"\"K$\":\"0\"",
+			"add?r",
+			"slots",
+			"url",
+			"score",
+			"python",
+			"problem_builder",
+			"mobile_problem_builder",
+			"builder",
+			"log_access",
+			"home",
+			"play",
+			"log",
+			"get_google",
+			"Eventbus",
+			"eventbus",
+			"event",
+			"cache",
+			"modified",
+			"get_mobile",
+			"/gae_bingo",
+			"http",
+			"medians",
+			"DAU",
+			"DAUMAU",
+			"debug",
+			"save",
+			"has no attribute",
+			"no",
+			"has",
+			"has no",
+			"has no attribute",
+			"jsonapi/rest",
+			"rest",
+			"restaghzaW5ncGF0aHIQCxIJSW50ZXJmYWNlGIxWDAaghzaW5ncGF0aHIQCxIJSW50ZXJmYWNlGIxWDA",
+			"metadata",
+			"write",
+			"verifyReq",
+			"verifyrequest",
+			"start_test_server",
+			"says",
+			"ng-controller=\"newBadgePopUpCtrl\"",
+			"directives",
+			"badgesPopUp",
+			"create_game"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"/\",",
+			"http://2012",
+			"",
+			" ",
+			"\"",
+			"ender",
+			"/landing_pages/contribution_page",
+			"_images/landing_pages/contribution_page",
+			"Record",
+			"_css/SingPathMain.css",
+			"angular.min.js",
+			"angular"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "backend.py",
+					"settings":
+					{
+						"buffer_size": 12725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8221,
+								8221
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4648.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/scboesch/singpath.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 222.0,
+	"status_bar_visible": true
+}
