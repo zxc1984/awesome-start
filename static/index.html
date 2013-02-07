@@ -38,7 +38,8 @@
                                 {},{'get': {method: 'JSONP', isArray: false, params:{callback: 'JSON_CALLBACK'}}
                                    }
                             );
-
+        
+        //Updates the server model <id> with the "item" object in the page: update(<id of object>)
         $scope.update = function(id){
           $scope.UpdateResource = $resource('http://:remote_url/:apikey/:model/:id', 
                         {"remote_url":$scope.remote_url,"apikey":$scope.apikey,"model":$scope.model, "id":id }, 
@@ -53,6 +54,7 @@
                 });
         };
         
+        //Adds a new object into the server with the "item" object in the page: add()
         $scope.add = function(){
           $scope.SaveResource = $resource('http://:remote_url/:apikey/:model', 
                         {"remote_url":$scope.remote_url,"apikey":$scope.apikey,"model":$scope.model}, 
@@ -67,6 +69,7 @@
                 }); 
         };
         
+        //Populates all the objects of the model named $scope.model into the array "items": list()
         $scope.list = function(){
           data = {'remote_url':$scope.remote_url,
                   'model_type':$scope.model,
@@ -79,7 +82,8 @@
                   $scope.waiting = "Ready";
                 });  
         };
-                
+        
+        //Loads the object from the server with id <id> into the "item" object: load(id)      
         $scope.load = function(id){
           data = {'remote_url':$scope.remote_url,
                   'model_type':$scope.model,
@@ -95,6 +99,7 @@
               });        
         };
         
+        //Deletes the object from the server with id <id>: delete(id)
         $scope.delete = function(id){
           data = {'remote_url':$scope.remote_url,
                   'model_type':$scope.model,
@@ -108,6 +113,7 @@
                   $scope.list();
               });
         };
+        
         //To add key/value pairs when creating new objects
         $scope.add_key_to_item = function(){
           $scope.item.data[$scope.newItemKey] = $scope.newItemValue;
@@ -115,6 +121,7 @@
           $scope.newItemValue = "";
         };
         
+        //Gets the metadata of an API Key, and returns the raw data to the "metadata" object: get_metadata()
         $scope.get_metadata = function(){
           data = {'remote_url':$scope.remote_url,
                   'model_type':"metadata",
